@@ -1,0 +1,230 @@
+:root {
+  --background-color: #f4f4f4;
+  --text-color: #000;
+  --button-background: #007BFF;
+  --button-hover: #0056b3;
+  --reset-button-background: #6c757d;
+  --reset-button-hover: #5a6268;
+  --container-background: #fff;
+  --container-box-shadow: rgba(0, 0, 0, 0.1);
+  --transition-duration: 0.3s;
+}
+
+[data-theme="dark"] {
+  --background-color: #333;
+  --text-color: #fff;
+  --button-background: #1E90FF;
+  --button-hover: #1C86EE;
+  --reset-button-background: #868e96;
+  --reset-button-hover: #6c757d;
+  --container-background: #444;
+  --container-box-shadow: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] {
+  --background-color: #f4f4f4;
+  --text-color: #000;
+  --button-background: #007BFF;
+  --button-hover: #0056b3;
+  --reset-button-background: #6c757d;
+  --reset-button-hover: #5a6268;
+  --container-background: #fff;
+  --container-box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Fira Code', monospace;
+}
+
+h1, h2, h3 {
+  font-family: 'Fira Code', monospace;
+}
+
+input {
+  font-family: 'Fira Code', monospace;
+}
+
+button {
+  font-family: 'Fira Code', monospace;
+}
+
+.container {
+  font-family: 'Fira Code', monospace;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
+  transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+
+.container {
+  background: var(--container-background);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px var(--container-box-shadow);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  transition: background-color var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: calc(100% - 20px);
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  color: var(--text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 16px;
+  margin: 5px;
+}
+
+button[type="submit"] {
+  background-color: var(--button-background);
+}
+
+button[type="submit"]:hover {
+  background-color: var(--button-hover);
+}
+
+button[type="button"] {
+  background-color: var(--reset-button-background);
+}
+
+button[type="button"]:hover {
+  background-color: var(--reset-button-hover);
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: left;
+  transition: background-color var(--transition-duration), border-color var(--transition-duration);
+}
+
+#result p {
+  animation: fadeIn 0.5s ease-in-out;
+  margin: 0;
+  padding: 10px;
+  background-color: var(--container-background);
+  border: 1px solid var(--button-background);
+  border-radius: 4px;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle i {
+  font-size: 24px;
+  color: var(--button-background);
+  transition: all transform 0.3s ease, all opacity 0.3s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes line-through {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+[data-theme="dark"] .theme-toggle i {
+  animation: line-through 0.3s forwards;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  input, button {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  #result {
+    font-size: 16px;
+  }
+
+  .theme-toggle i {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  input, button {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  #result {
+    font-size: 14px;
+  }
+
+  .theme-toggle i {
+    font-size: 18px;
+  }
+}
