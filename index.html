@@ -1,35 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Kalkulator BMI</title>
-	<link rel="stylesheet" href="src/index.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap">
-	<link rel="stylesheet" href="styles.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tabler-icons/iconfont/tabler-icons.min.css">
-	<link href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css" rel="stylesheet">
-</head>
-<body>
-	<button class="theme-toggle" id="themeToggle">
-		<i id="themeIcon" class="ti ti-sun"></i>
-	</button>
-	<div class="container">
-		<h1>Kalkulator BMI</h1>
-		<form id="bmiForm">
-			<div class="form-group">
-				<label for="weight">Berat (kg):</label>
-				<input type="number" id="weight" name="weight" required>
-			</div>
-			<div class="form-group">
-				<label for="height">Tinggi (cm):</label>
-				<input type="number" id="height" name="height" required>
-			</div>
-			<button type="submit">Cek</button>
-			<button type="button" id="resetButton">Reset</button>
-		</form>
-		<div id="result"></div>
-	</div>
-	<script src="src/index.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Kalkulator BMI &verbar; Fauzira Alpiandi</title>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+		/>
+		<link rel="stylesheet" href="/src/index.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/tabler-icons/iconfont/tabler-icons.min.css"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<button class="theme-toggle" id="themeToggle">
+			<i id="themeIcon" class="ti ti-sun"></i>
+		</button>
+		<div class="container">
+			<h1>Kalkulator BMI</h1>
+			<form id="bmiForm">
+				<div class="form-group">
+					<label for="name">Nama:</label>
+					<input type="text" id="name" name="name" required />
+				</div>
+				<div class="form-group">
+					<label for="weight">Berat (kg):</label>
+					<input type="number" id="weight" name="weight" required />
+				</div>
+				<div class="form-group">
+					<label for="height">Tinggi (cm):</label>
+					<input type="number" id="height" name="height" required />
+				</div>
+				<button type="submit">Hitung</button>
+				<button type="button" id="resetButton">Reset</button>
+			</form>
+			<div id="result"></div>
+		</div>
+		<footer>
+				<p>Kalkulator BMI oleh <a href="https://fauziralpiandi.xyz" target="_blank">Fauzira Alpiandi</a></p>
+		</footer>
+		<script src="/src/index.js"></script>
+	</body>
 </html>

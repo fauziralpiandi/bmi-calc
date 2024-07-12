@@ -1,11 +1,24 @@
+/*
+ * BMI Calculator
+ * Copyright (c) 2024 Fauzira Alpiandi
+ * Released under MIT License
+ * https://fauziralpiandi.xyz
+ 
+ * Kalkulator BMI
+ * Hak cipta (c) 2024 Fauzira Alpiandi
+ * Rilis dibawah Lisensi MIT
+ * https://fauziralpiandi.xyz
+ */
+
 document.getElementById('bmiForm').addEventListener('submit', (e) => {
 	e.preventDefault();
 
+	const name = document.getElementById('name').value;
 	const weight = document.getElementById('weight').value;
 	const heightInCm = document.getElementById('height').value;
 
-	if (!weight || !heightInCm) {
-		alert('');
+	if (!name || !weight || !heightInCm) {
+		alert('Nama, berat, dan tinggi harus diisi!');
 		return;
 	}
 
@@ -16,7 +29,7 @@ document.getElementById('bmiForm').addEventListener('submit', (e) => {
 	if (bmi < 18.5) {
 		category = '<b>KURUS</b><br/><br/>Pastikan untuk mendapatkan nutrisi yang cukup dan seimbang untuk kesehatan yang optimal.';
 	} else if (bmi >= 18.5 && bmi < 24.9) {
-		category = '<b>NORMAL</b><br/><br/>Pertahankan gaya hidup sehat dengan pola makan seimbang dan olahraha yang teratur.';
+		category = '<b>NORMAL</b><br/><br/>Pertahankan gaya hidup sehat dengan pola makan seimbang dan olahraga yang teratur.';
 	} else if (bmi >= 25 && bmi < 29.9) {
 		category = '<b>BERLEBIH</b><br/><br/>Pertimbangkan untuk menyesuaikan pola makan dan rutin berolahraga untuk mencapai berat badan yang sehat.';
 	} else {
@@ -27,11 +40,12 @@ document.getElementById('bmiForm').addEventListener('submit', (e) => {
 	resultDiv.innerHTML = '';
 
 	setTimeout(() => {
-		resultDiv.innerHTML = `<p>Nilai <b>BMI</b> Kamu = <b>${bmi.toFixed(2)}</b></p><p>${category}</p>`;
+		resultDiv.innerHTML = `<p><b>${name}</b> memiliki nilai <b>BMI</b> = <b>${bmi.toFixed(2)}</b></p><p>${category}</p>`;
 	}, 0);
 });
 
 document.getElementById('resetButton').addEventListener('click', () => {
+	document.getElementById('name').value = '';
 	document.getElementById('weight').value = '';
 	document.getElementById('height').value = '';
 	document.getElementById('result').innerHTML = '';
