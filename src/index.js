@@ -3,11 +3,6 @@
  * Copyright (c) 2024 Fauzira Alpiandi
  * Released under MIT License
  * https://fauziralpiandi.xyz
- 
- * Kalkulator BMI
- * Hak cipta (c) 2024 Fauzira Alpiandi
- * Rilis dibawah Lisensi MIT
- * https://fauziralpiandi.xyz
  */
 
 document.getElementById('bmiForm').addEventListener('submit', (e) => {
