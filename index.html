@@ -4,47 +4,74 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Kalkulator BMI &verbar; Fauzira Alpiandi</title>
+		<!-- Link ke Google Fonts -->
 		<link
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
 		/>
+		<!-- Link ke file CSS eksternal -->
 		<link rel="stylesheet" href="src/index.css" />
+		<!-- Link ke ikon Tabler -->
 		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/tabler-icons/iconfont/tabler-icons.min.css"
 		/>
 		<link
-			href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css"
 			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css"
 		/>
 	</head>
 	<body>
+		<!-- Tombol untuk toggle tema -->
 		<button class="theme-toggle" id="themeToggle">
 			<i id="themeIcon" class="ti ti-sun"></i>
 		</button>
+
 		<div class="container">
 			<h1>Kalkulator BMI</h1>
+			<!-- Formulir untuk input data BMI -->
 			<form id="bmiForm">
 				<div class="form-group">
-					<label for="name">Nama:</label>
+					<label for="name">Nama</label>
 					<input type="text" id="name" name="name" required />
 				</div>
 				<div class="form-group">
-					<label for="weight">Berat (kg):</label>
+					<label for="weight">Berat</label>
 					<input type="number" id="weight" name="weight" required />
 				</div>
 				<div class="form-group">
-					<label for="height">Tinggi (cm):</label>
+					<label for="height">Tinggi</label>
 					<input type="number" id="height" name="height" required />
+				</div>
+				<div class="form-group">
+					<label for="unitSelect">Unit</label>
+					<select id="unitSelect">
+						<option value="metric">METRIK (kg/cm)</option>
+						<option value="imperial">IMPERIAL (lbs/inch)</option>
+					</select>
 				</div>
 				<button type="submit">Hitung</button>
 				<button type="button" id="resetButton">Reset</button>
 			</form>
+			<!-- Div untuk menampilkan hasil BMI -->
 			<div id="result"></div>
 		</div>
+
+		<!-- Atribusi dan Lisensi -->
 		<footer>
-				<p>Kalkulator BMI oleh <a href="https://fauziralpiandi.xyz" target="_blank">Fauzira Alpiandi</a></p>
+			<p>
+				Kalkulator
+				<a href="https://en.wikipedia.org/wiki/Body_mass_index" target="_blank"
+					>BMI</a
+				>
+				oleh
+				<a href="https://fauziralpiandi.xyz" target="_blank"
+					>Fauzira Alpiandi</a
+				>
+			</p>
 		</footer>
+
+		<!-- Script JavaScript eksternal -->
 		<script src="src/index.js"></script>
 	</body>
 </html>
