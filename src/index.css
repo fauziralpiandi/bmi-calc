@@ -1,10 +1,4 @@
-/*
- * BMI Calculator
- * Copyright (c) 2024 Fauzira Alpiandi
- * Released under MIT License
- * https://fauziralpiandi.xyz
- */
-
+/* Variabel tema */
 :root {
 	--background-color: #f4f4f4;
 	--text-color: #000;
@@ -17,17 +11,19 @@
 	--transition-duration: 0.3s;
 }
 
+/* Variabel tema untuk mode gelap */
 [data-theme="dark"] {
-	--background-color: #333;
+	--background-color: #0d0d0d;
 	--text-color: #fff;
 	--button-background: #1E90FF;
 	--button-hover: #1C86EE;
 	--reset-button-background: #868e96;
 	--reset-button-hover: #6c757d;
-	--container-background: #444;
+	--container-background: #3d3d3d;
 	--container-box-shadow: rgba(255, 255, 255, 0.1);
 }
 
+/* Variabel tema untuk mode terang */
 [data-theme="light"] {
 	--background-color: #f4f4f4;
 	--text-color: #000;
@@ -39,62 +35,71 @@
 	--container-box-shadow: rgba(0, 0, 0, 0.1);
 }
 
+/* Gaya dasar untuk body */
 body {
 	background-color: var(--background-color);
 	color: var(--text-color);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	height: 88vh;
 	margin: 0;
 	padding: 20px;
 	font-family: 'Fira Code', monospace;
 	transition: background-color var(--transition-duration), color var(--transition-duration);
 }
 
-h1, h2, h3 {
+/* Gaya umum untuk input, button, dan select */
+input,
+button,
+select {
 	font-family: 'Fira Code', monospace;
+	font-weight: bold;
+	text-align: center;
 }
 
-input, button {
-	font-family: 'Fira Code', monospace;
-}
-
+/* Gaya untuk container */
 .container {
 	background: var(--container-background);
 	padding: 20px;
 	border-radius: 8px;
 	box-shadow: 0 0 10px var(--container-box-shadow);
 	text-align: center;
-	max-width: 400px;
+	max-width: 300px;
 	width: 100%;
 	transition: background-color var(--transition-duration), box-shadow var(--transition-duration);
 }
 
+/* Gaya untuk judul */
 h1 {
 	margin-bottom: 20px;
 }
 
+/* Gaya untuk kelompok form */
 .form-group {
-	margin-bottom: 15px;
-	text-align: left;
+	margin-bottom: 10px;
+	text-align: center;
 }
 
+/* Gaya untuk label */
 label {
 	display: block;
 	margin-bottom: 5px;
 	font-weight: bold;
 }
 
-input {
-	width: calc(100% - 20px);
+/* Gaya untuk input dan select */
+input,
+select {
+	width: calc(100% - 50px);
 	padding: 8px 10px;
 	margin-bottom: 10px;
-	border: 1px solid #ccc;
+	border: 2.5px solid #ccc;
 	border-radius: 4px;
-	font-size: 16px;
+	font-size: 10px;
 }
 
+/* Gaya untuk tombol */
 button {
 	padding: 10px 20px;
 	color: var(--text-color);
@@ -102,42 +107,46 @@ button {
 	border-radius: 4px;
 	cursor: pointer;
 	transition: background-color 0.3s ease, color 0.3s ease;
-	font-size: 16px;
-	margin: 5px;
+	font-size: 10px;
+	margin: 0px;
 }
 
+/* Gaya untuk tombol submit */
 button[type="submit"] {
 	background-color: var(--button-background);
 }
 
+/* Gaya untuk tombol submit saat hover */
 button[type="submit"]:hover {
 	background-color: var(--button-hover);
 }
 
+/* Gaya untuk tombol reset */
 button[type="button"] {
 	background-color: var(--reset-button-background);
 }
 
+/* Gaya untuk tombol reset saat hover */
 button[type="button"]:hover {
 	background-color: var(--reset-button-hover);
 }
 
+/* Gaya untuk div hasil */
 #result {
 	margin-top: 20px;
-	font-size: 18px;
-	text-align: left;
+	font-size: 5px;
+	text-align: center;
 	transition: background-color var(--transition-duration), border-color var(--transition-duration);
 }
 
+/* Gaya untuk paragraf di div hasil */
 #result p {
-	animation: fadeIn 0.5s ease-in-out;
-	margin: 0;
-	padding: 10px;
-	background-color: var(--container-background);
-	border: 1px solid var(--button-background);
-	border-radius: 4px;
+	animation: fadeIn .75s ease-in-out;
+	margin: 0px;
+	padding: 12px;
 }
 
+/* Gaya untuk tombol toggle tema */
 .theme-toggle {
 	position: absolute;
 	top: 10px;
@@ -149,67 +158,78 @@ button[type="button"]:hover {
 	transition: transform 0.3s ease;
 }
 
+/* Gaya untuk ikon tombol toggle tema */
 .theme-toggle i {
 	font-size: 24px;
 	color: var(--button-background);
 	transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* Gaya untuk footer */
 footer {
 	position: absolute;
 	bottom: 10px;
 	font-size: 14px;
+	font-weight: bold;
 	color: var(--text-color);
 }
 
+/* Gaya untuk link di footer */
 footer a {
 	color: var(--button-background);
 	text-decoration: none;
 	transition: color 0.3s ease;
 }
 
+/* Gaya untuk link di footer saat hover */
 footer a:hover {
 	color: var(--button-hover);
 }
 
+/* Animasi fadeIn */
 @keyframes fadeIn {
 	0% {
 		opacity: 0;
 		transform: translateY(20px);
 	}
+
 	100% {
 		opacity: 1;
 		transform: translateY(0);
 	}
 }
 
+/* Animasi line-through untuk ikon tema */
 @keyframes line-through {
 	0% {
 		transform: scaleX(0);
 	}
+
 	100% {
 		transform: scaleX(1);
 	}
 }
 
+/* Animasi untuk ikon tema saat di mode gelap */
 [data-theme="dark"] .theme-toggle i {
 	animation: line-through 0.3s forwards;
 }
 
+/* Responsif untuk berbagai ukuran layar */
 @media (max-width: 1200px) {
-	body {
-		padding: 15px;
-	}
 
+	body,
 	.container {
-		padding: 20px;
+		padding: 15px;
 	}
 
 	h1 {
 		font-size: 28px;
 	}
 
-	input, button {
+	input,
+	button,
+	select {
 		font-size: 15px;
 		padding: 8px 12px;
 	}
@@ -228,19 +248,19 @@ footer a:hover {
 }
 
 @media (max-width: 992px) {
-	body {
-		padding: 15px;
-	}
 
+	body,
 	.container {
-		padding: 18px;
+		padding: 15px;
 	}
 
 	h1 {
 		font-size: 26px;
 	}
 
-	input, button {
+	input,
+	button,
+	select {
 		font-size: 14px;
 		padding: 7px 10px;
 	}
@@ -259,19 +279,19 @@ footer a:hover {
 }
 
 @media (max-width: 768px) {
-	body {
-		padding: 10px;
-	}
 
+	body,
 	.container {
-		padding: 15px;
+		padding: 10px;
 	}
 
 	h1 {
 		font-size: 24px;
 	}
 
-	input, button {
+	input,
+	button,
+	select {
 		font-size: 13px;
 		padding: 6px 8px;
 	}
@@ -290,10 +310,8 @@ footer a:hover {
 }
 
 @media (max-width: 576px) {
-	body {
-		padding: 10px;
-	}
 
+	body,
 	.container {
 		padding: 10px;
 	}
@@ -302,7 +320,9 @@ footer a:hover {
 		font-size: 22px;
 	}
 
-	input, button {
+	input,
+	button,
+	select {
 		font-size: 12px;
 		padding: 5px 7px;
 	}
@@ -321,10 +341,8 @@ footer a:hover {
 }
 
 @media (max-width: 400px) {
-	body {
-		padding: 8px;
-	}
 
+	body,
 	.container {
 		padding: 8px;
 	}
@@ -333,7 +351,9 @@ footer a:hover {
 		font-size: 20px;
 	}
 
-	input, button {
+	input,
+	button,
+	select {
 		font-size: 11px;
 		padding: 4px 6px;
 	}
